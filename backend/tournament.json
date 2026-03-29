@@ -1,0 +1,358 @@
+{
+  "teams": [
+    {
+      "name": "Jug",
+      "players": [
+        {
+          "name": "Chir"
+        },
+        {
+          "name": "Kalayan"
+        },
+        {
+          "name": "Bala"
+        },
+        {
+          "name": "Mah"
+        },
+        {
+          "name": "Ven"
+        },
+        {
+          "name": "Pavan"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "Mav",
+      "players": [
+        {
+          "name": "Dus"
+        },
+        {
+          "name": "Nag"
+        },
+        {
+          "name": "MAx"
+        },
+        {
+          "name": "Comp"
+        },
+        {
+          "name": "Mini"
+        },
+        {
+          "name": "Super"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Tit",
+      "players": [
+        {
+          "name": "Door"
+        },
+        {
+          "name": "Key"
+        },
+        {
+          "name": "Bell"
+        },
+        {
+          "name": "Mouse"
+        },
+        {
+          "name": "Long"
+        },
+        {
+          "name": "Board"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Pio",
+      "players": [
+        {
+          "name": "Sub"
+        },
+        {
+          "name": "Jack"
+        },
+        {
+          "name": "Nish"
+        },
+        {
+          "name": "Fruit"
+        },
+        {
+          "name": "Prash"
+        },
+        {
+          "name": "Pine"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "Ben",
+      "players": [
+        {
+          "name": "Ru"
+        },
+        {
+          "name": "Saty"
+        },
+        {
+          "name": "Ka"
+        },
+        {
+          "name": "Sury"
+        },
+        {
+          "name": "Kav"
+        },
+        {
+          "name": "Praj"
+        }
+      ],
+      "id": 5
+    }
+  ],
+  "matches": [
+    {
+      "id": 1,
+      "team1Id": 1,
+      "team2Id": 2,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 2,
+      "team1Id": 3,
+      "team2Id": 4,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 3,
+      "team1Id": 1,
+      "team2Id": 5,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 4,
+      "team1Id": 2,
+      "team2Id": 3,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 5,
+      "team1Id": 4,
+      "team2Id": 5,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 6,
+      "team1Id": 1,
+      "team2Id": 3,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 7,
+      "team1Id": 2,
+      "team2Id": 4,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 8,
+      "team1Id": 3,
+      "team2Id": 5,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 9,
+      "team1Id": 1,
+      "team2Id": 4,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    },
+    {
+      "id": 10,
+      "team1Id": 2,
+      "team2Id": 5,
+      "team1Pairs": null,
+      "team2Pairs": null,
+      "games": [
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        },
+        {
+          "team1Score": null,
+          "team2Score": null
+        }
+      ],
+      "completed": false,
+      "type": "round-robin"
+    }
+  ],
+  "phase": "round-robin",
+  "winner": null
+}
