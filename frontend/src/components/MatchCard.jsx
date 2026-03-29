@@ -55,6 +55,15 @@ export default function MatchCard({ match, team1, team2, matchNumber, isFinals =
     setErr('')
   }
 
+  const adjustScore = (gameIdx, field, delta) => {
+    setGameStates(prev => prev.map((g, i) => {
+      if (i !== gameIdx) return g
+      const current = g[field] === '' ? 0 : g[field]
+      return { ...g, [field]: Math.max(0, Math.min(99, current + delta)) }
+    }))
+    setErr('')
+  }
+
   const validateGame = (gameIdx) => {
     const { team1Score, team2Score } = gameStates[gameIdx]
     if (team1Score === '' || team2Score === '') return 'Both scores are required'
@@ -368,25 +377,41 @@ export default function MatchCard({ match, team1, team2, matchNumber, isFinals =
                         {game.team2Score}
                       </div>
                     </>
+                  ) : !bothPairsSet ? (
+                    <div className="flex-1 text-center py-2">
+                      <span className="text-xs text-amber-600 font-medium">🔒 Lock both teams' pairs to enter scores</span>
+                    </div>
                   ) : (
                     <>
-                      <input
-                        type="number" min="0" max="99"
-                        className="score-input"
-                        placeholder="0"
-                        value={game.team1Score}
-                        onChange={e => setScore(i, 'team1Score', e.target.value)}
-                      />
-                      <div className="flex-1 text-center text-xs font-medium text-gray-500">
+                      <div className="flex items-center gap-1">
+                        <button type="button" onClick={() => adjustScore(i, 'team1Score', -1)}
+                          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 hover:bg-red-100 text-gray-600 hover:text-red-600 font-bold text-base transition-colors">−</button>
+                        <input
+                          type="number" min="0" max="99"
+                          className="score-input"
+                          placeholder="0"
+                          value={game.team1Score}
+                          onChange={e => setScore(i, 'team1Score', e.target.value)}
+                        />
+                        <button type="button" onClick={() => adjustScore(i, 'team1Score', 1)}
+                          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 hover:bg-green-100 text-gray-600 hover:text-green-600 font-bold text-base transition-colors">+</button>
+                      </div>
+                      <div className="flex-1 text-center text-xs font-medium text-gray-500 shrink-0">
                         Game {i + 1}
                       </div>
-                      <input
-                        type="number" min="0" max="99"
-                        className="score-input"
-                        placeholder="0"
-                        value={game.team2Score}
-                        onChange={e => setScore(i, 'team2Score', e.target.value)}
-                      />
+                      <div className="flex items-center gap-1">
+                        <button type="button" onClick={() => adjustScore(i, 'team2Score', -1)}
+                          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 hover:bg-red-100 text-gray-600 hover:text-red-600 font-bold text-base transition-colors">−</button>
+                        <input
+                          type="number" min="0" max="99"
+                          className="score-input"
+                          placeholder="0"
+                          value={game.team2Score}
+                          onChange={e => setScore(i, 'team2Score', e.target.value)}
+                        />
+                        <button type="button" onClick={() => adjustScore(i, 'team2Score', 1)}
+                          className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 hover:bg-green-100 text-gray-600 hover:text-green-600 font-bold text-base transition-colors">+</button>
+                      </div>
                     </>
                   )}
                 </div>
@@ -400,14 +425,14 @@ export default function MatchCard({ match, team1, team2, matchNumber, isFinals =
                     >
                       Reset Game {i + 1}
                     </button>
-                  ) : (
+                  ) : bothPairsSet ? (
                     <button
                       onClick={() => requestSave(i)}
                       className="text-xs text-blue-800 hover:text-blue-900 font-medium border border-blue-200 hover:border-blue-500 bg-white rounded px-2 py-0.5 transition-colors"
                     >
                       Save Game {i + 1}
                     </button>
-                  )}
+                  ) : null}
                 </div>
               </div>
             )
