@@ -84,7 +84,7 @@ export default function PairSetupModal({ match, team, teamSide, onClose, onSaved
       <div className="fixed inset-0 z-40 flex items-end sm:items-center justify-center px-0 sm:px-4">
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
-        <div className="relative bg-white w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto animate-fade-in">
+        <div className="relative bg-white w-full sm:max-w-md rounded-t-2xl sm:rounded-2xl shadow-2xl max-h-[calc(100vh-72px)] sm:max-h-[90vh] overflow-y-auto animate-fade-in">
           {/* Header */}
           <div className="sticky top-0 bg-white border-b border-gray-100 px-5 py-4 flex items-center justify-between rounded-t-2xl">
             <div>
