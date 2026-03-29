@@ -94,7 +94,7 @@ export default function PairSetupModal({ match, team, teamSide, onClose, onSaved
             <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none">&times;</button>
           </div>
 
-          <div className="px-5 py-4 space-y-4">
+          <div className="px-5 py-4 space-y-4 pb-24 md:pb-4">
             <div className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-2 text-xs text-blue-700">
               🔒 Each player can only play in <strong>one</strong> sub-match. Selected players are automatically removed from other game dropdowns.
             </div>
