@@ -1,0 +1,15 @@
+[project]
+name = "agents-with-langgraph"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=1.2.15",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.26",
+    "langchain-groq>=1.1.2",
+    "langgraph>=1.1.6",
+    "pygithub>=2.9.0",
+    "tiktoken>=0.12.0",
+]
