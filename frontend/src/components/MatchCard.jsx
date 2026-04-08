@@ -22,7 +22,7 @@ function getMatchResult(gameStates) {
   return { team1Wins: t1, team2Wins: t2 }
 }
 
-export default function MatchCard({ match, team1, team2, matchNumber, isFinals = false }) {
+export default function MatchCard({ match, team1, team2, matchNumber, isFinals = false, round }) {
   const { refresh } = useTournament()
   const [gameStates, setGameStates] = useState(() => initGameState(match.games))
   const [busy, setBusy] = useState(false)
@@ -226,7 +226,7 @@ export default function MatchCard({ match, team1, team2, matchNumber, isFinals =
         {/* Header */}
         <div className="flex items-center justify-between mb-3">
           <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">
-            {isFinals ? '🥇 FINALS' : `Match ${matchNumber}`}
+            {isFinals ? '🥇 FINALS' : round ? `Round ${round} · Match ${matchNumber}` : `Match ${matchNumber}`}
           </span>
           {match.completed ? (
             <span className="badge-done">✓ Finalized</span>

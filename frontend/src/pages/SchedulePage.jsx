@@ -22,10 +22,18 @@ export default function SchedulePage() {
 
   const rrMatches = tournament.matches.filter(m => m.type === 'round-robin')
   const completed = rrMatches.filter(m => m.completed)
-  const pending = rrMatches.filter(m => !m.completed)
-  const allDone = pending.length === 0
+  const allDone = completed.length === rrMatches.length
 
   const getTeam = (id) => tournament.teams.find(t => t.id === id)
+
+  // Group by round number
+  const roundGroups = {}
+  rrMatches.forEach(match => {
+    const r = match.round ?? 1
+    if (!roundGroups[r]) roundGroups[r] = []
+    roundGroups[r].push(match)
+  })
+  const sortedRounds = Object.keys(roundGroups).map(Number).sort((a, b) => a - b)
 
   const handleStartFinals = async () => {
     await fetch('/api/tournament/start-finals', { method: 'POST' })
@@ -44,7 +52,7 @@ export default function SchedulePage() {
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <div
             className="bg-blue-700 h-2.5 rounded-full transition-all duration-500"
-            style={{ width: `${(completed.length / rrMatches.length) * 100}%` }}
+            style={{ width: rrMatches.length ? `${(completed.length / rrMatches.length) * 100}%` : '0%' }}
           />
         </div>
         {allDone && tournament.phase === 'round-robin' && (
@@ -64,47 +72,37 @@ export default function SchedulePage() {
         )}
       </div>
 
-      {/* Pending matches */}
-      {pending.length > 0 && (
-        <section>
-          <h2 className="text-base font-bold text-gray-700 mb-2 flex items-center gap-2">
-            <span className="badge-pending">Pending</span>
-            {pending.length} match{pending.length !== 1 ? 'es' : ''} remaining
-          </h2>
-          <div className="space-y-3">
-            {pending.map((match, i) => (
-              <MatchCard
-                key={match.id}
-                match={match}
-                team1={getTeam(match.team1Id)}
-                team2={getTeam(match.team2Id)}
-                matchNumber={i + 1}
-              />
-            ))}
-          </div>
-        </section>
-      )}
+      {/* Rounds */}
+      {sortedRounds.map(roundNum => {
+        const roundMatches = roundGroups[roundNum]
+        const roundDone = roundMatches.every(m => m.completed)
+        const roundStarted = roundMatches.some(m => m.completed)
 
-      {/* Completed matches */}
-      {completed.length > 0 && (
-        <section>
-          <h2 className="text-base font-bold text-gray-700 mb-2 flex items-center gap-2">
-            <span className="badge-done">Completed</span>
-            {completed.length} match{completed.length !== 1 ? 'es' : ''}
-          </h2>
-          <div className="space-y-3">
-            {completed.map((match, i) => (
-              <MatchCard
-                key={match.id}
-                match={match}
-                team1={getTeam(match.team1Id)}
-                team2={getTeam(match.team2Id)}
-                matchNumber={pending.length + i + 1}
-              />
-            ))}
-          </div>
-        </section>
-      )}
+        return (
+          <section key={roundNum}>
+            <div className="flex items-center gap-2 mb-2">
+              <h2 className="text-base font-bold text-gray-700">Round {roundNum}</h2>
+              {roundDone ? (
+                <span className="badge-done">✓ Complete</span>
+              ) : roundStarted ? (
+                <span className="badge-pending">In Progress</span>
+              ) : null}
+            </div>
+            <div className="space-y-3">
+              {roundMatches.map((match, i) => (
+                <MatchCard
+                  key={match.id}
+                  match={match}
+                  team1={getTeam(match.team1Id)}
+                  team2={getTeam(match.team2Id)}
+                  matchNumber={i + 1}
+                  round={roundNum}
+                />
+              ))}
+            </div>
+          </section>
+        )
+      })}
     </div>
   )
 }

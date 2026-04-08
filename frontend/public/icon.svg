@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#1e3a8a"/>
+  <text
+    x="256" y="300"
+    font-family="sans-serif"
+    font-weight="900"
+    font-size="220"
+    text-anchor="middle"
+    fill="#facc15"
+    letter-spacing="-8"
+  >FR</text>
+  <text
+    x="256" y="390"
+    font-family="sans-serif"
+    font-weight="700"
+    font-size="72"
+    text-anchor="middle"
+    fill="#93c5fd"
+    letter-spacing="6"
+  >SEASON 2</text>
+</svg>

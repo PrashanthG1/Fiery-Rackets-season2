@@ -3,25 +3,96 @@ import { useNavigate } from 'react-router-dom'
 import { useTournament } from '../context/TournamentContext'
 import ConfirmDialog from '../components/ConfirmDialog'
 
-const NUM_TEAMS = 5
+const NUM_TEAMS = 6
 const PLAYERS_PER_TEAM = 6
 
-function emptyTeams() {
-  return Array.from({ length: NUM_TEAMS }, (_, ti) => ({
-    name: '',
-    players: Array.from({ length: PLAYERS_PER_TEAM }, (_, pi) => ({ name: '' }))
+const PREFILLED_TEAMS = [
+  {
+    name: 'Banana Boys',
+    players: [
+      { name: 'Subash' },
+      { name: 'Mohan' },
+      { name: 'Naveen B' },
+      { name: 'Satya' },
+      { name: 'Sai Teja Goud Pirangi' },
+      { name: 'Satyabhargav Puli' },
+    ]
+  },
+  {
+    name: 'Juggernauts',
+    players: [
+      { name: 'Prashanth' },
+      { name: 'Tulasi Chittiraju' },
+      { name: 'Karthik Lucky' },
+      { name: 'Venkata Prasanth' },
+      { name: 'Tri Nguyen' },
+      { name: 'N. Sai Kumar Nandipati' },
+    ]
+  },
+  {
+    name: 'Titans',
+    players: [
+      { name: 'Surya' },
+      { name: 'Sai Teja' },
+      { name: 'Yugadeep Bandaru' },
+      { name: 'Kavish Tankariya' },
+      { name: 'Adi Narayana Manga' },
+      { name: 'Karthik Vadde' },
+    ]
+  },
+  {
+    name: 'Mavericks',
+    players: [
+      { name: 'Ankur' },
+      { name: 'Mahendra' },
+      { name: 'Wei Jia' },
+      { name: 'Nishit Grover' },
+      { name: 'Varad Parte' },
+      { name: 'Ashish Jaiswal' },
+    ]
+  },
+  {
+    name: 'Bengal Tigers',
+    players: [
+      { name: 'Kalyan' },
+      { name: 'Rudra Pandya' },
+      { name: 'Jackson Pitz' },
+      { name: 'Sanath' },
+      { name: 'Rizvi Shaik' },
+      { name: 'Bhanu Prasad Vakkapatla' },
+    ]
+  },
+  {
+    name: 'Iron Clads',
+    players: [
+      { name: 'Jashwanth' },
+      { name: 'Ganesh' },
+      { name: 'Tarun Niluroutu' },
+      { name: 'Rajeev Tripathi' },
+      { name: 'Surya Pakanati' },
+      { name: 'Prajwal' },
+    ]
+  },
+]
+
+function defaultTeams() {
+  return PREFILLED_TEAMS.map(t => ({
+    name: t.name,
+    players: t.players.map(p => ({ name: p.name }))
   }))
 }
 
 export default function SetupPage() {
   const { tournament, refresh } = useTournament()
   const navigate = useNavigate()
-  const [teams, setTeams] = useState(emptyTeams)
+  const [teams, setTeams] = useState(defaultTeams)
   const [submitting, setSubmitting] = useState(false)
   const [errors, setErrors] = useState([])
 
   const isActive = tournament?.phase && tournament.phase !== 'setup'
   const [showResetConfirm, setShowResetConfirm] = useState(false)
+  const [resetCode, setResetCode] = useState('')
+  const [resetCodeError, setResetCodeError] = useState('')
 
   const setTeamName = (ti, val) => {
     setTeams(prev => prev.map((t, i) => i === ti ? { ...t, name: val } : t))
@@ -60,7 +131,7 @@ export default function SetupPage() {
       await fetch('/api/tournament/setup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ teams: payload })
+        body: JSON.stringify({ teams: payload, matchFormat: { singles: 0, doubles: 3 } })
       })
       await refresh()
       navigate('/schedule')
@@ -71,10 +142,21 @@ export default function SetupPage() {
     }
   }
 
+  const handleResetAttempt = () => {
+    if (resetCode !== 'greatvalue') {
+      setResetCodeError('Incorrect code. Please try again.')
+      return
+    }
+    setResetCodeError('')
+    setShowResetConfirm(false)
+    handleReset()
+  }
+
   const handleReset = async () => {
     await fetch('/api/tournament/reset', { method: 'POST' })
     await refresh()
-    setTeams(emptyTeams())
+    setTeams(defaultTeams())
+    setResetCode('')
   }
 
   if (isActive) {
@@ -86,8 +168,22 @@ export default function SetupPage() {
             message="All match scores, player pairs, and progress will be permanently lost. This cannot be undone."
             confirmLabel="Yes, Reset Everything"
             confirmClass="btn-danger"
-            onConfirm={() => { setShowResetConfirm(false); handleReset() }}
-            onCancel={() => setShowResetConfirm(false)}
+            onConfirm={handleResetAttempt}
+            onCancel={() => { setShowResetConfirm(false); setResetCode(''); setResetCodeError('') }}
+            extraContent={
+              <div className="mt-3">
+                <label className="block text-sm font-semibold text-gray-700 mb-1">Enter reset code to confirm</label>
+                <input
+                  type="text"
+                  value={resetCode}
+                  onChange={e => { setResetCode(e.target.value); setResetCodeError('') }}
+                  placeholder="Enter code…"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-400"
+                  autoFocus
+                />
+                {resetCodeError && <p className="text-red-600 text-xs mt-1">{resetCodeError}</p>}
+              </div>
+            }
           />
         )}
         <div className="card text-center py-8">
@@ -121,7 +217,7 @@ export default function SetupPage() {
       <div className="text-center py-4">
         <div className="text-5xl mb-2">🏸</div>
         <h1 className="text-2xl font-bold text-gray-900">Setup Tournament</h1>
-        <p className="text-gray-500 text-sm mt-1">Enter {NUM_TEAMS} teams with {PLAYERS_PER_TEAM} players each</p>
+        <p className="text-gray-500 text-sm mt-1">{NUM_TEAMS} teams · {PLAYERS_PER_TEAM} players each</p>
       </div>
 
       {/* Team forms */}
@@ -144,10 +240,12 @@ export default function SetupPage() {
               <input
                 key={pi}
                 type="text"
-                placeholder={`Player ${pi + 1}`}
+                placeholder={pi === 0 ? 'Captain' : `Player ${pi + 1}`}
                 value={player.name}
                 onChange={e => setPlayerName(ti, pi, e.target.value)}
-                className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
+                className={`border rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300 ${
+                  pi === 0 ? 'border-blue-300 bg-blue-50 font-semibold' : 'border-gray-200'
+                }`}
               />
             ))}
           </div>

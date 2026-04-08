@@ -3,12 +3,9 @@ import ConfirmDialog from './ConfirmDialog'
 
 export default function PairSetupModal({ match, team, teamSide, onClose, onSaved }) {
   const existing = match[`${teamSide}Pairs`]
+  const gameCount = match.games.length
   const [pairs, setPairs] = useState(
-    existing ?? [
-      { player1: '', player2: '' },
-      { player1: '', player2: '' },
-      { player1: '', player2: '' }
-    ]
+    existing ?? Array.from({ length: gameCount }, () => ({ player1: '', player2: '' }))
   )
   const [errors, setErrors] = useState([])
   const [showConfirm, setShowConfirm] = useState(false)
@@ -99,7 +96,7 @@ export default function PairSetupModal({ match, team, teamSide, onClose, onSaved
               🔒 Each player can only play in <strong>one</strong> sub-match. Selected players are automatically removed from other game dropdowns.
             </div>
 
-            {[0, 1, 2].map(i => {
+            {Array.from({ length: gameCount }, (_, i) => i).map(i => {
               const usedElsewhere = playersUsedElsewhere(i)
               const otherSlot = { player1: 'player2', player2: 'player1' }
 
