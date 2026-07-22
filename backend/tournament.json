@@ -1,154 +1,58 @@
 {
-  "tournamentId": null,
-  "tournamentName": null,
-  "matchFormat": {
-    "singles": 0,
-    "doubles": 3
-  },
+  "tournamentId": 1775879191483,
+  "tournamentName": "Fiery",
+  "matchFormat": null,
+  "matchStyle": "single-pair",
+  "stageFormat": "round-robin",
+  "numGroups": null,
   "teams": [
     {
-      "name": "Banana Boys",
+      "name": "Smash Kings",
       "players": [
         {
-          "name": "Subash"
+          "name": "Rahul Nair"
         },
         {
-          "name": "Mohan"
-        },
-        {
-          "name": "Naveen B"
-        },
-        {
-          "name": "Satya"
-        },
-        {
-          "name": "Sai Teja Goud Pirangi"
-        },
-        {
-          "name": "Satyabhargav Puli"
+          "name": "Arjun Sharma"
         }
       ],
       "id": 1
     },
     {
-      "name": "Juggernauts",
+      "name": "Net Ninjas",
       "players": [
         {
-          "name": "Prashanth"
+          "name": "Priya Mohan"
         },
         {
-          "name": "Tulasi Chittiraju"
-        },
-        {
-          "name": "Karthik Lucky"
-        },
-        {
-          "name": "Venkata Prasanth"
-        },
-        {
-          "name": "Tri Nguyen"
-        },
-        {
-          "name": "N. Sai Kumar Nandipati"
+          "name": "Meera Krishnan"
         }
       ],
       "id": 2
     },
     {
-      "name": "Titans",
+      "name": "Drop Shot Devils",
       "players": [
         {
-          "name": "Surya"
+          "name": "Deepak Menon"
         },
         {
-          "name": "Sai Teja"
-        },
-        {
-          "name": "Yugadeep Bandaru"
-        },
-        {
-          "name": "Kavish Tankariya"
-        },
-        {
-          "name": "Adi Narayana Manga"
-        },
-        {
-          "name": "Karthik Vadde"
+          "name": "Vikram Reddy"
         }
       ],
       "id": 3
     },
     {
-      "name": "Mavericks",
+      "name": "Shuttle Hawks",
       "players": [
         {
-          "name": "Ankur"
+          "name": "Karthik Iyer"
         },
         {
-          "name": "Mahendra"
-        },
-        {
-          "name": "Wei Jia"
-        },
-        {
-          "name": "Nishit Grover"
-        },
-        {
-          "name": "Varad Parte"
-        },
-        {
-          "name": "Ashish Jaiswal"
+          "name": "Sneha Rao"
         }
       ],
       "id": 4
-    },
-    {
-      "name": "Bengal Tigers",
-      "players": [
-        {
-          "name": "Kalyan"
-        },
-        {
-          "name": "Rudra Pandya"
-        },
-        {
-          "name": "Jackson Pitz"
-        },
-        {
-          "name": "Sanath"
-        },
-        {
-          "name": "Rizvi Shaik"
-        },
-        {
-          "name": "Bhanu Prasad Vakkapatla"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "name": "Iron Clads",
-      "players": [
-        {
-          "name": "Jashwanth"
-        },
-        {
-          "name": "Ganesh"
-        },
-        {
-          "name": "Tarun Niluroutu"
-        },
-        {
-          "name": "Rajeev Tripathi"
-        },
-        {
-          "name": "Surya Pakanati"
-        },
-        {
-          "name": "Prajwal"
-        }
-      ],
-      "id": 6
     }
   ],
   "matches": [
@@ -156,52 +60,26 @@
       "id": 1,
       "round": 1,
       "team1Id": 1,
-      "team2Id": 6,
+      "team2Id": 4,
       "team1Pairs": [
         {
-          "player1": "Subash",
-          "player2": "Mohan"
-        },
-        {
-          "player1": "Naveen B",
-          "player2": "Satya"
-        },
-        {
-          "player1": "Sai Teja Goud Pirangi",
-          "player2": "Satyabhargav Puli"
+          "player1": "Rahul Nair",
+          "player2": "Arjun Sharma"
         }
       ],
       "team2Pairs": [
         {
-          "player1": "Jashwanth",
-          "player2": "Ganesh"
-        },
-        {
-          "player1": "Tarun Niluroutu",
-          "player2": "Rajeev Tripathi"
-        },
-        {
-          "player1": "Prajwal",
-          "player2": "Surya Pakanati"
+          "player1": "Karthik Iyer",
+          "player2": "Sneha Rao"
         }
       ],
       "games": [
         {
           "team1Score": 21,
-          "team2Score": 12
-        },
-        {
-          "team1Score": 21,
-          "team2Score": 11
-        },
-        {
-          "team1Score": 21,
-          "team2Score": 12
+          "team2Score": 14
         }
       ],
       "gameTypes": [
-        "doubles",
-        "doubles",
         "doubles"
       ],
       "completed": true,
@@ -211,52 +89,26 @@
       "id": 2,
       "round": 1,
       "team1Id": 2,
-      "team2Id": 5,
+      "team2Id": 3,
       "team1Pairs": [
         {
-          "player1": "Prashanth",
-          "player2": "Tulasi Chittiraju"
-        },
-        {
-          "player1": "Karthik Lucky",
-          "player2": "Venkata Prasanth"
-        },
-        {
-          "player1": "Tri Nguyen",
-          "player2": "N. Sai Kumar Nandipati"
+          "player1": "Meera Krishnan",
+          "player2": "Priya Mohan"
         }
       ],
       "team2Pairs": [
         {
-          "player1": "Kalyan",
-          "player2": "Rudra Pandya"
-        },
-        {
-          "player1": "Jackson Pitz",
-          "player2": "Sanath"
-        },
-        {
-          "player1": "Rizvi Shaik",
-          "player2": "Bhanu Prasad Vakkapatla"
+          "player1": "Deepak Menon",
+          "player2": "Vikram Reddy"
         }
       ],
       "games": [
         {
-          "team1Score": 12,
+          "team1Score": 23,
           "team2Score": 21
-        },
-        {
-          "team1Score": 12,
-          "team2Score": 21
-        },
-        {
-          "team1Score": 21,
-          "team2Score": 12
         }
       ],
       "gameTypes": [
-        "doubles",
-        "doubles",
         "doubles"
       ],
       "completed": true,
@@ -264,54 +116,28 @@
     },
     {
       "id": 3,
-      "round": 1,
-      "team1Id": 3,
-      "team2Id": 4,
+      "round": 2,
+      "team1Id": 1,
+      "team2Id": 3,
       "team1Pairs": [
         {
-          "player1": "Surya",
-          "player2": "Sai Teja"
-        },
-        {
-          "player1": "Yugadeep Bandaru",
-          "player2": "Kavish Tankariya"
-        },
-        {
-          "player1": "Adi Narayana Manga",
-          "player2": "Karthik Vadde"
+          "player1": "Rahul Nair",
+          "player2": "Arjun Sharma"
         }
       ],
       "team2Pairs": [
         {
-          "player1": "Mahendra",
-          "player2": "Ankur"
-        },
-        {
-          "player1": "Wei Jia",
-          "player2": "Nishit Grover"
-        },
-        {
-          "player1": "Ashish Jaiswal",
-          "player2": "Varad Parte"
+          "player1": "Deepak Menon",
+          "player2": "Vikram Reddy"
         }
       ],
       "games": [
         {
           "team1Score": 21,
-          "team2Score": 11
-        },
-        {
-          "team1Score": 11,
-          "team2Score": 21
-        },
-        {
-          "team1Score": 21,
-          "team2Score": 11
+          "team2Score": 7
         }
       ],
       "gameTypes": [
-        "doubles",
-        "doubles",
         "doubles"
       ],
       "completed": true,
@@ -320,53 +146,27 @@
     {
       "id": 4,
       "round": 2,
-      "team1Id": 1,
-      "team2Id": 5,
+      "team1Id": 4,
+      "team2Id": 2,
       "team1Pairs": [
         {
-          "player1": "Subash",
-          "player2": "Mohan"
-        },
-        {
-          "player1": "Satya",
-          "player2": "Naveen B"
-        },
-        {
-          "player1": "Sai Teja Goud Pirangi",
-          "player2": "Satyabhargav Puli"
+          "player1": "Karthik Iyer",
+          "player2": "Sneha Rao"
         }
       ],
       "team2Pairs": [
         {
-          "player1": "Kalyan",
-          "player2": "Rudra Pandya"
-        },
-        {
-          "player1": "Sanath",
-          "player2": "Rizvi Shaik"
-        },
-        {
-          "player1": "Jackson Pitz",
-          "player2": "Bhanu Prasad Vakkapatla"
+          "player1": "Priya Mohan",
+          "player2": "Meera Krishnan"
         }
       ],
       "games": [
         {
           "team1Score": 21,
           "team2Score": 12
-        },
-        {
-          "team1Score": 21,
-          "team2Score": 23
-        },
-        {
-          "team1Score": 12,
-          "team2Score": 21
         }
       ],
       "gameTypes": [
-        "doubles",
-        "doubles",
         "doubles"
       ],
       "completed": true,
@@ -374,54 +174,28 @@
     },
     {
       "id": 5,
-      "round": 2,
-      "team1Id": 6,
-      "team2Id": 4,
+      "round": 3,
+      "team1Id": 1,
+      "team2Id": 2,
       "team1Pairs": [
         {
-          "player1": "Jashwanth",
-          "player2": "Ganesh"
-        },
-        {
-          "player1": "Tarun Niluroutu",
-          "player2": "Surya Pakanati"
-        },
-        {
-          "player1": "Rajeev Tripathi",
-          "player2": "Prajwal"
+          "player1": "Rahul Nair",
+          "player2": "Arjun Sharma"
         }
       ],
       "team2Pairs": [
         {
-          "player1": "Ankur",
-          "player2": "Mahendra"
-        },
-        {
-          "player1": "Wei Jia",
-          "player2": "Nishit Grover"
-        },
-        {
-          "player1": "Varad Parte",
-          "player2": "Ashish Jaiswal"
+          "player1": "Priya Mohan",
+          "player2": "Meera Krishnan"
         }
       ],
       "games": [
         {
-          "team1Score": 12,
-          "team2Score": 21
-        },
-        {
-          "team1Score": 12,
-          "team2Score": 21
-        },
-        {
           "team1Score": 21,
-          "team2Score": 12
+          "team2Score": 11
         }
       ],
       "gameTypes": [
-        "doubles",
-        "doubles",
         "doubles"
       ],
       "completed": true,
@@ -429,321 +203,73 @@
     },
     {
       "id": 6,
-      "round": 2,
-      "team1Id": 2,
-      "team2Id": 3,
+      "round": 3,
+      "team1Id": 3,
+      "team2Id": 4,
       "team1Pairs": [
         {
-          "player1": "Tulasi Chittiraju",
-          "player2": "Prashanth"
-        },
-        {
-          "player1": "Venkata Prasanth",
-          "player2": "Karthik Lucky"
-        },
-        {
-          "player1": "N. Sai Kumar Nandipati",
-          "player2": "Tri Nguyen"
+          "player1": "Deepak Menon",
+          "player2": "Vikram Reddy"
         }
       ],
       "team2Pairs": [
         {
-          "player1": "Sai Teja",
-          "player2": "Surya"
-        },
-        {
-          "player1": "Yugadeep Bandaru",
-          "player2": "Kavish Tankariya"
-        },
-        {
-          "player1": "Adi Narayana Manga",
-          "player2": "Karthik Vadde"
+          "player1": "Karthik Iyer",
+          "player2": "Sneha Rao"
         }
       ],
       "games": [
         {
           "team1Score": 23,
           "team2Score": 21
-        },
-        {
-          "team1Score": 21,
-          "team2Score": 11
-        },
-        {
-          "team1Score": 11,
-          "team2Score": 21
         }
       ],
       "gameTypes": [
-        "doubles",
-        "doubles",
         "doubles"
       ],
       "completed": true,
       "type": "round-robin"
     },
     {
-      "id": 7,
-      "round": 3,
+      "id": 9999,
       "team1Id": 1,
       "team2Id": 4,
-      "team1Pairs": null,
-      "team2Pairs": null,
+      "team1Pairs": [
+        {
+          "player1": "Rahul Nair",
+          "player2": "Arjun Sharma"
+        }
+      ],
+      "team2Pairs": [
+        {
+          "player1": "Karthik Iyer",
+          "player2": "Sneha Rao"
+        }
+      ],
       "games": [
         {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
+          "team1Score": 21,
+          "team2Score": 12
         }
       ],
       "gameTypes": [
-        "doubles",
-        "doubles",
         "doubles"
       ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 8,
-      "round": 3,
-      "team1Id": 5,
-      "team2Id": 3,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 9,
-      "round": 3,
-      "team1Id": 6,
-      "team2Id": 2,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 10,
-      "round": 4,
-      "team1Id": 1,
-      "team2Id": 3,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 11,
-      "round": 4,
-      "team1Id": 4,
-      "team2Id": 2,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 12,
-      "round": 4,
-      "team1Id": 5,
-      "team2Id": 6,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 13,
-      "round": 5,
-      "team1Id": 1,
-      "team2Id": 2,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 14,
-      "round": 5,
-      "team1Id": 3,
-      "team2Id": 6,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
-    },
-    {
-      "id": 15,
-      "round": 5,
-      "team1Id": 4,
-      "team2Id": 5,
-      "team1Pairs": null,
-      "team2Pairs": null,
-      "games": [
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        },
-        {
-          "team1Score": null,
-          "team2Score": null
-        }
-      ],
-      "gameTypes": [
-        "doubles",
-        "doubles",
-        "doubles"
-      ],
-      "completed": false,
-      "type": "round-robin"
+      "completed": true,
+      "type": "finals"
     }
   ],
-  "phase": "round-robin",
-  "winner": null
+  "phase": "completed",
+  "winner": {
+    "name": "Smash Kings",
+    "players": [
+      {
+        "name": "Rahul Nair"
+      },
+      {
+        "name": "Arjun Sharma"
+      }
+    ],
+    "id": 1
+  }
 }
